@@ -40,7 +40,7 @@ public class LoginActivity extends AppCompatActivity {
             mAuth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener(LoginActivity.this, task -> {
                         if(task.isSuccessful()){
-                            Toast.makeText(LoginActivity.this, "Logged In Successfully", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "Logged In Successfully!!!", Toast.LENGTH_SHORT).show();
                             SharedPreferences sp = getSharedPreferences("loginStatus", MODE_PRIVATE);
                             SharedPreferences.Editor e = sp.edit();
                             e.putString("user", email);
