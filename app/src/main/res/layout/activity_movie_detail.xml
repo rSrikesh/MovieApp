@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MovieDetailActivity"
+    android:id="@+id/detailframelayout">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/detailTitle"
+        android:fontFamily="@font/sourcecode"
+        android:textSize="17sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/detailTitle"
+        android:id="@+id/detailOriginalTitle"
+        android:fontFamily="@font/sourcecode"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10sp"
+        android:textSize="15sp"/>
+
+    <ImageView
+        android:id="@+id/detailPoster"
+        android:layout_width="200sp"
+        android:layout_height="160sp"
+        android:layout_below="@+id/detailOriginalTitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/detailPoster"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10sp"
+        android:id="@+id/detailLanguage"
+        android:fontFamily="@font/sourcecode"/>
+
+    <TextView
+        android:id="@+id/detailDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/detailLanguage"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10sp"
+        android:fontFamily="@font/sourcecode" />
+
+    <TextView
+        android:id="@+id/detailOverview"
+        android:layout_width="220sp"
+        android:layout_height="200sp"
+        android:layout_below="@+id/detailDate"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15sp"
+        android:fontFamily="@font/sourcecode"
+        android:textAlignment="center"/>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_favorite_24"
+        android:layout_below="@+id/detailOverview"
+        android:layout_marginLeft="140sp"
+        android:layout_marginTop="35sp"
+        android:id="@+id/addFavMovBtn"/>
+
+    <ImageButton
+        android:id="@+id/remFavMovBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/detailOverview"
+        android:layout_marginLeft="20sp"
+        android:layout_marginTop="35sp"
+        android:layout_toRightOf="@+id/addFavMovBtn"
+        android:src="@drawable/ic_baseline_remove_circle_24" />
+
+</RelativeLayout>

@@ -1,0 +1,29 @@
+<resources>
+    <!--    App Name-->
+    <string name="app_name">MovieApp</string>
+
+    <!--    Logo Description-->
+    <string name="description">Logo used for this App</string>
+
+    <!--    Login Activity-->
+    <string name="login_email">Enter Registered Email</string>
+    <string name="login_password">Enter Registered Password</string>
+    <string name="login_btn">Login</string>
+    <string name="login_txt_1">New User?</string>
+    <string name="login_txt_2">Register Here!!</string>
+
+    <!--    Register Activity-->
+    <string name="register_email">Enter New Email</string>
+    <string name="register_password">Enter New Password</string>
+    <string name="register">Register</string>
+
+    <!--    Bottom NavBar-->
+    <string name="navbar_home">Home</string>
+    <string name="navbar_fav">Favourites</string>
+    <string name="navbar_profile">Profile</string>
+
+    <!--    Profile Activity-->
+    <string name="profile_placeholder">Placeholder for Profile Image</string>
+
+</resources>
+
