@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
         Client client = new Client();
         Service service = client.getClient().create(Service.class);
-        Call<MovieResponse> call = service.movieResponse(Creds.API_KEY,2);
+        Call<MovieResponse> call = service.movieResponse(Creds.API_KEY,1);
         call.enqueue(new Callback<MovieResponse>() {
             @Override
             public void onResponse(Call<MovieResponse> call, Response<MovieResponse> response) {

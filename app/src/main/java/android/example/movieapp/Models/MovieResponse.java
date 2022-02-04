@@ -8,16 +8,10 @@ public class MovieResponse {
     private int page;
     @SerializedName("results")
     private List<Movies>results;
-    @SerializedName("total_pages")
-    private int totalPages;
-    @SerializedName("total_results")
-    private int totalResults;
 
-    public MovieResponse(int page, List<Movies> results, int totalPages, int totalResults) {
+    public MovieResponse(int page, List<Movies> results) {
         this.page = page;
         this.results = results;
-        this.totalPages = totalPages;
-        this.totalResults = totalResults;
     }
 
     public int getPage() {
@@ -36,19 +30,4 @@ public class MovieResponse {
         this.results = results;
     }
 
-    public int getTotalPages() {
-        return totalPages;
-    }
-
-    public void setTotalPages(int totalPages) {
-        this.totalPages = totalPages;
-    }
-
-    public int getTotalResults() {
-        return totalResults;
-    }
-
-    public void setTotalResults(int totalResults) {
-        this.totalResults = totalResults;
-    }
 }
