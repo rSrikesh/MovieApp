@@ -20,7 +20,7 @@ public class SplashActivity extends AwesomeSplash {
         configSplash.setTitleSplash("Welcome");
         configSplash.setTitleTextSize(25f);
         configSplash.setTitleTextColor(R.color.black);
-        configSplash.setAnimTitleTechnique(Techniques.Landing);
+        configSplash.setAnimTitleTechnique(Techniques.FadeIn);
     }
 
     @Override

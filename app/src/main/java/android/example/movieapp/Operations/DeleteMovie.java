@@ -18,14 +18,19 @@ public class DeleteMovie extends AsyncTask<Void,Void,Void> {
 
     @Override
     protected Void doInBackground(Void... voids) {
-        MovieDB mb = MovieDB.getInstance(c);
-        mb.movieDao().deleteMovie(mv.favID,mv.userEmail);
         return null;
     }
 
     @Override
     protected void onPostExecute(Void unused) {
-        Toast.makeText(c, "Removed from Favourites", Toast.LENGTH_SHORT).show();
+        MovieDB mb = MovieDB.getInstance(c);
+        if(mb.movieDao().searchMovie(mv.favID, mv.userEmail).size() == 0){
+            Toast.makeText(c, "Movie not available in Favourites", Toast.LENGTH_SHORT).show();
+        }else{
+            mb.movieDao().deleteMovie(mv.favID,mv.userEmail);
+            Toast.makeText(c, "Removed from Favourites", Toast.LENGTH_SHORT).show();
+        }
         super.onPostExecute(unused);
     }
 }
+

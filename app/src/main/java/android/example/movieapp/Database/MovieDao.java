@@ -16,4 +16,7 @@ public interface MovieDao {
 
     @Query("DELETE FROM favmovie where mID = :ID and uEmail = :email")
     void deleteMovie(int ID,String email);
+
+    @Query("SELECT * from favmovie WHERE mID = :ID and uEmail = :email")
+    List<FavMovie> searchMovie(int ID,String email);
 }

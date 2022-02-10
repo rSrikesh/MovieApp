@@ -19,5 +19,4 @@ public class FavMovie {
 
     @ColumnInfo(name = "mPosterUrl")
     public String favUrl;
-
 }

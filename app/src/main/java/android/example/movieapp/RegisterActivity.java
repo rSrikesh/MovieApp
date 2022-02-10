@@ -35,7 +35,7 @@ public class RegisterActivity extends AppCompatActivity {
                     .addOnCompleteListener(RegisterActivity.this, task -> {
                         if(task.isSuccessful()){
                             Toast.makeText(RegisterActivity.this, "Registered Successfully", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+                            startActivity(new Intent(RegisterActivity.this,LoginActivity.class));
                         }else{
                             Toast.makeText(RegisterActivity.this, "Registration Unsuccessful "+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }

@@ -15,7 +15,6 @@ public class LoginActivity extends AppCompatActivity {
     private Button loginBtn;
     private TextView toRegister;
     private FirebaseAuth mAuth;
-    private SharedPreferences s;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,7 +22,7 @@ public class LoginActivity extends AppCompatActivity {
         loginEmail = findViewById(R.id.loginEmail);
         loginPassword = findViewById(R.id.loginPassword);
         loginBtn = findViewById(R.id.loginBtn);
-        toRegister = findViewById(R.id.toRegsiter);
+        toRegister = findViewById(R.id.toRegister);
         mAuth = FirebaseAuth.getInstance();
 
         loginBtn.setOnClickListener(v -> userLogin());

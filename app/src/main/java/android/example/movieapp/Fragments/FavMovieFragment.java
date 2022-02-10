@@ -66,7 +66,7 @@ public class FavMovieFragment extends Fragment {
         addFavMovBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new InsertMovie(getActivity()).execute(m);
+                new InsertMovie(m,getActivity()).execute();
             }
         });
 

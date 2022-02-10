@@ -24,6 +24,7 @@
 
     <!--    Profile Activity-->
     <string name="profile_placeholder">Placeholder for Profile Image</string>
+    <string name="signOut">Sign Out</string>
 
 </resources>
 

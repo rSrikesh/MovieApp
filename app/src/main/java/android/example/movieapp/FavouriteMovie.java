@@ -33,10 +33,10 @@ public class FavouriteMovie extends AppCompatActivity {
         btmNavBar = findViewById(R.id.bottom);
         btmNavBar.setOnItemSelectedListener(item -> {
             if(item.getItemId() == R.id.navbar_home){
-                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                startActivity(new Intent(FavouriteMovie.this,MainActivity.class));
                 return true;
             }else if(item.getItemId() == R.id.navbar_profile){
-                startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
+                startActivity(new Intent(FavouriteMovie.this,ProfileActivity.class));
                 return true;
             }
             return false;
