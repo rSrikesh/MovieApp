@@ -13,11 +13,12 @@
         android:layout_marginTop="10sp"
         android:id="@+id/favMovieRecyclerView"/>
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
+    <io.ak1.BubbleTabBar
         android:layout_width="match_parent"
-        android:layout_height="55sp"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        app:menu="@menu/bottom_navigation"
-        android:id="@+id/bottom" />
+        app:bubbletab_menuResource="@menu/bottom_navigation"
+        android:id="@+id/bottom"
+        android:background="@color/plum"/>
 
 </RelativeLayout>

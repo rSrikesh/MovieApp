@@ -1,6 +1,5 @@
 package android.example.movieapp;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,19 +12,18 @@ import android.example.movieapp.Retrofit.Client;
 import android.example.movieapp.Retrofit.Service;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.MenuItem;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationBarView;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import io.ak1.BubbleTabBar;
+import io.ak1.OnBubbleClickListener;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
-    private BottomNavigationView btmNav;
+    private BubbleTabBar btmNav;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,17 +50,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btmNav.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+        btmNav.addBubbleListener(new OnBubbleClickListener() {
             @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                if(item.getItemId() == R.id.navbar_fav){
+            public void onBubbleClick(int i) {
+                if(i == R.id.navbar_fav){
                     startActivity(new Intent(MainActivity.this,FavouriteMovie.class));
-                    return true;
-                }else if(item.getItemId() == R.id.navbar_profile){
+                }else if(i == R.id.navbar_profile){
                     startActivity(new Intent(MainActivity.this,ProfileActivity.class));
-                    return true;
                 }
-                return false;
             }
         });
     }

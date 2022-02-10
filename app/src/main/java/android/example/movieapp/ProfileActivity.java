@@ -1,24 +1,22 @@
 package android.example.movieapp;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import io.ak1.BubbleTabBar;
+import io.ak1.OnBubbleClickListener;
 
 public class ProfileActivity extends AppCompatActivity {
     private TextView profileEmail;
     FirebaseUser mUser;
     FirebaseAuth mAuth;
     private Button signOut;
-    BottomNavigationView btmProfile;
+    BubbleTabBar btmProfile;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,17 +27,15 @@ public class ProfileActivity extends AppCompatActivity {
         profileEmail.setText(mUser.getEmail());
         btmProfile = findViewById(R.id.bottom2);
         signOut = findViewById(R.id.signout);
-        btmProfile.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+
+        btmProfile.addBubbleListener(new OnBubbleClickListener() {
             @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                if(item.getItemId() == R.id.navbar_home){
+            public void onBubbleClick(int i) {
+                if(i == R.id.navbar_home){
                     startActivity(new Intent(ProfileActivity.this,MainActivity.class));
-                    return true;
-                }else if(item.getItemId() == R.id.navbar_fav){
+                }else if(i == R.id.navbar_fav){
                     startActivity(new Intent(ProfileActivity.this,FavouriteMovie.class));
-                    return true;
                 }
-                return false;
             }
         });
         signOut.setOnClickListener(new View.OnClickListener() {

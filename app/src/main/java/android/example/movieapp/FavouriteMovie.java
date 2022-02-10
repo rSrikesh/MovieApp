@@ -8,15 +8,16 @@ import android.example.movieapp.Adapters.FavMovieAdapter;
 import android.example.movieapp.Database.MovieDB;
 import android.example.movieapp.Models.FavMovie;
 import android.os.Bundle;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import java.util.List;
+import io.ak1.BubbleTabBar;
+import io.ak1.OnBubbleClickListener;
 
 public class FavouriteMovie extends AppCompatActivity {
     private RecyclerView favMovRecView;
     FirebaseUser mUser;
-    private BottomNavigationView btmNavBar;
+    private BubbleTabBar btmNavBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,15 +32,15 @@ public class FavouriteMovie extends AppCompatActivity {
         favMovRecView.setAdapter(Adapter);
 
         btmNavBar = findViewById(R.id.bottom);
-        btmNavBar.setOnItemSelectedListener(item -> {
-            if(item.getItemId() == R.id.navbar_home){
+        btmNavBar.addBubbleListener(new OnBubbleClickListener() {
+            @Override
+            public void onBubbleClick(int i) {
+                if(i == R.id.navbar_home){
                 startActivity(new Intent(FavouriteMovie.this,MainActivity.class));
-                return true;
-            }else if(item.getItemId() == R.id.navbar_profile){
+                }else if(i == R.id.navbar_profile){
                 startActivity(new Intent(FavouriteMovie.this,ProfileActivity.class));
-                return true;
+                }
             }
-            return false;
         });
         getSupportActionBar().setTitle("Favourites");
     }

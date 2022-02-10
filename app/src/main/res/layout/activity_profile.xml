@@ -34,11 +34,12 @@
         android:text="@string/signOut"
         android:id="@+id/signout"/>
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom2"
+    <io.ak1.BubbleTabBar
         android:layout_width="match_parent"
-        android:layout_height="60sp"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottom2"
         android:layout_alignParentBottom="true"
-        app:menu="@menu/bottom_navigation" />
+        app:bubbletab_menuResource="@menu/bottom_navigation"
+        android:background="@color/plum"/>
 
 </RelativeLayout>
